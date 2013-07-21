@@ -40,7 +40,7 @@ namespace HitSpeedTest
             calc.Updated += new EventHandler(calc_Updated);
             radioButton1_Click(null, null);
             g = Graphics.FromImage(bitmap);
-
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             calc.TargetTime = 50000000;//default test time (10000000 ticks=1 second)
             calc.TargetHits = 50;//default test hits
 

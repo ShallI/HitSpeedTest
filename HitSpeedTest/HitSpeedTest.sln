@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitSpeedTest", "手速测试\HitSpeedTest.csproj", "{F22F305D-6A90-4BB5-A9E3-C25D355CC883}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HitSpeedTest", "HitSpeedTest\HitSpeedTest.csproj", "{F22F305D-6A90-4BB5-A9E3-C25D355CC883}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
