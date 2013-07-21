@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 using System.Windows.Forms;
-namespace 手速测试
+namespace HitSpeedTest
 {
     public class Settings
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-namespace 手速测试
+namespace HitSpeedTest
 {
     public enum CalcMethod{
         ByTime,
@@ -10,8 +10,8 @@ namespace 手速测试
     };
     public class HitCalc
     {
-        protected bool ready;
-        protected bool singlekey;
+        protected bool ready=true;
+        protected bool singlekey;//single tap style
         public bool SingleKey
         {
             set { singlekey = value; }
@@ -54,6 +54,7 @@ namespace 手速测试
             set { targettime = value; }
         }
         public event EventHandler Updated;
+        //single tap bpm*2
         public double BPM
         {
             get

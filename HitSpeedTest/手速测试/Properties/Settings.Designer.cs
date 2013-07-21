@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace 手速测试.Properties
+namespace HitSpeedTest.Properties
 {
 
 

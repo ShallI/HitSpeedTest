@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Configuration;
 using System.IO;
-namespace 手速测试
+namespace HitSpeedTest
 {
     public partial class Form1 : Form
     {
@@ -16,21 +16,21 @@ namespace 手速测试
         Settings settings;
         
 
-        Bitmap bitmap=new Bitmap(1200,600);
+        Bitmap bitmap=new Bitmap(1200,600);//canvas
         Graphics g;
         Point a, b;
         public Form1()
         {
-
-
             InitializeComponent();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //add all enum Keys to combolistbox
             string[] keys = Enum.GetNames(typeof(Keys));
             calc = new HitCalc();
+            settings = Settings.Load();
+
             cmbK1.Items.AddRange(keys);
             cmbK2.Items.AddRange(keys);
             cmbM1.Items.AddRange(keys);
@@ -39,17 +39,18 @@ namespace 手速测试
 
             calc.Updated += new EventHandler(calc_Updated);
             radioButton1_Click(null, null);
-
             g = Graphics.FromImage(bitmap);
 
-            calc.TargetTime = 50000000;
-            calc.TargetHits = 50;
+            calc.TargetTime = 50000000;//default test time (10000000 ticks=1 second)
+            calc.TargetHits = 50;//default test hits
 
             reset();
         }
         void loadconfig()
         {
-            settings = Settings.Load();
+            //由于事件已经在设计器注册，为防止事件破坏设置，使用局部settings，参看settingsChanged方法
+            
+            Settings settings = Settings.Load();
             cmbK1.Text = Enum.GetName(typeof(Keys), settings.K1);
             cmbK1.Enabled = settings.K1On;
 
@@ -71,11 +72,11 @@ namespace 手速测试
         {
             if (calc.Method == CalcMethod.ByTime)
             {
-                lblL.Text = (calc.LeftTime / 10000000.0).ToString("#0.0");
-                lblH.Text = calc.Hits.ToString();
+                lblL.Text = (calc.LeftTime / 10000000.0).ToString("#0.0");//how many seconds left
+                lblH.Text = calc.Hits.ToString();//current hits
 
                 double bpm = calc.BPM;
-                lblB.Text = bpm.ToString("#0.0");
+                lblB.Text = bpm.ToString("#0.0");//current average bpm
                 if (calc.IsRunning)
                 {
                     a = b;
@@ -86,7 +87,7 @@ namespace 手速测试
             }
             else
             {
-                lblL.Text = (calc.TargetHits - calc.Hits).ToString("#0.0");
+                lblL.Text = (calc.TargetHits - calc.Hits).ToString();
                 lblH.Text = calc.Hits.ToString();
 
                 double bpm = calc.BPM;
@@ -105,11 +106,12 @@ namespace 手速测试
         {
             lblBpm2.Text = lblHits2.Text = lblLifeHits.Text=lblBpm1.Text = lblHits1.Text = lblLifeTime.Text = "";
             
-            g.Clear(Color.FromArgb(0, 255, 255, 255));
+            g.Clear(Color.FromArgb(0, 255, 255, 255));//clear canvas
             a = Point.Empty;
             b = Point.Empty;
         }
 
+        //for time test
         private void radioButton1_Click(object sender, EventArgs e)
         {
             radioButton2.Checked = false;
@@ -121,6 +123,7 @@ namespace 手速测试
             lblB = lblBpm1;
         }
 
+        //for hits test
         private void radioButton2_Click(object sender, EventArgs e)
         {
             radioButton1.Checked = false;
@@ -153,7 +156,7 @@ namespace 手速测试
         {
 
         }
-
+        //only accept double
         private void txtLife_Leave(object sender, EventArgs e)
         {
             double d;
@@ -166,7 +169,7 @@ namespace 手速测试
                 txtLife.Undo();
             }
         }
-
+        //only accept int
         private void txtHits_Leave(object sender, EventArgs e)
         {
             int i;
@@ -184,7 +187,12 @@ namespace 手速测试
         {
             
         }
-
+        //picStatus & Form1
+        /*warning! 
+         * MouseButtons.Left -> Keys.LButton
+         * MouseButtons.Middle -> Keys.MButton
+         * MouseButtons.Right -> Keys.RButton
+         */
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             Keys k = Keys.PrintScreen;
@@ -290,6 +298,7 @@ namespace 手速测试
             settings.M1 = (Keys)Enum.Parse(typeof(Keys), (string)cmbM1.SelectedItem);
             settings.M2 = (Keys)Enum.Parse(typeof(Keys), (string)cmbM2.SelectedItem);
             
+            //if enabled only 1 key,then single tap style
             int keys=0;
             if (settings.K1On) keys++;
             if (settings.K2On) keys++;

@@ -1,4 +1,4 @@
-﻿namespace 手速测试
+﻿namespace HitSpeedTest
 {
     partial class Form1
     {
@@ -31,24 +31,24 @@
             this.picStatus = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblBpm1 = new System.Windows.Forms.Label();
-            this.lblLifeTime = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblHits1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtLife = new System.Windows.Forms.TextBox();
+            this.lblLifeTime = new System.Windows.Forms.Label();
+            this.lblHits1 = new System.Windows.Forms.Label();
+            this.lblBpm1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblBpm2 = new System.Windows.Forms.Label();
-            this.lblLifeHits = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.lblHits2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtHits = new System.Windows.Forms.TextBox();
+            this.lblLifeHits = new System.Windows.Forms.Label();
+            this.lblHits2 = new System.Windows.Forms.Label();
+            this.lblBpm2 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -107,24 +107,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // lblBpm1
-            // 
-            this.lblBpm1.AutoSize = true;
-            this.lblBpm1.Location = new System.Drawing.Point(249, 41);
-            this.lblBpm1.Name = "lblBpm1";
-            this.lblBpm1.Size = new System.Drawing.Size(35, 12);
-            this.lblBpm1.TabIndex = 19;
-            this.lblBpm1.Text = "123.4";
-            // 
-            // lblLifeTime
-            // 
-            this.lblLifeTime.AutoSize = true;
-            this.lblLifeTime.Location = new System.Drawing.Point(63, 41);
-            this.lblLifeTime.Name = "lblLifeTime";
-            this.lblLifeTime.Size = new System.Drawing.Size(35, 12);
-            this.lblLifeTime.TabIndex = 18;
-            this.lblLifeTime.Text = "1.234";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -133,16 +115,6 @@
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 17;
             this.label5.Text = "当前BPM:";
-            // 
-            // lblHits1
-            // 
-            this.lblHits1.AutoSize = true;
-            this.lblHits1.Location = new System.Drawing.Point(169, 41);
-            this.lblHits1.Name = "lblHits1";
-            this.lblHits1.Size = new System.Drawing.Size(23, 12);
-            this.lblHits1.TabIndex = 16;
-            this.lblHits1.Text = "183";
-            this.lblHits1.Click += new System.EventHandler(this.lblCount_Click);
             // 
             // label3
             // 
@@ -181,6 +153,34 @@
             this.txtLife.TextChanged += new System.EventHandler(this.txtLife_TextChanged);
             this.txtLife.Leave += new System.EventHandler(this.txtLife_Leave);
             // 
+            // lblLifeTime
+            // 
+            this.lblLifeTime.AutoSize = true;
+            this.lblLifeTime.Location = new System.Drawing.Point(63, 41);
+            this.lblLifeTime.Name = "lblLifeTime";
+            this.lblLifeTime.Size = new System.Drawing.Size(35, 12);
+            this.lblLifeTime.TabIndex = 18;
+            this.lblLifeTime.Text = "1.234";
+            // 
+            // lblHits1
+            // 
+            this.lblHits1.AutoSize = true;
+            this.lblHits1.Location = new System.Drawing.Point(169, 41);
+            this.lblHits1.Name = "lblHits1";
+            this.lblHits1.Size = new System.Drawing.Size(23, 12);
+            this.lblHits1.TabIndex = 16;
+            this.lblHits1.Text = "183";
+            this.lblHits1.Click += new System.EventHandler(this.lblCount_Click);
+            // 
+            // lblBpm1
+            // 
+            this.lblBpm1.AutoSize = true;
+            this.lblBpm1.Location = new System.Drawing.Point(249, 41);
+            this.lblBpm1.Name = "lblBpm1";
+            this.lblBpm1.Size = new System.Drawing.Size(35, 12);
+            this.lblBpm1.TabIndex = 19;
+            this.lblBpm1.Text = "123.4";
+            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -210,24 +210,6 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             // 
-            // lblBpm2
-            // 
-            this.lblBpm2.AutoSize = true;
-            this.lblBpm2.Location = new System.Drawing.Point(249, 41);
-            this.lblBpm2.Name = "lblBpm2";
-            this.lblBpm2.Size = new System.Drawing.Size(35, 12);
-            this.lblBpm2.TabIndex = 28;
-            this.lblBpm2.Text = "123.4";
-            // 
-            // lblLifeHits
-            // 
-            this.lblLifeHits.AutoSize = true;
-            this.lblLifeHits.Location = new System.Drawing.Point(65, 41);
-            this.lblLifeHits.Name = "lblLifeHits";
-            this.lblLifeHits.Size = new System.Drawing.Size(17, 12);
-            this.lblLifeHits.TabIndex = 27;
-            this.lblLifeHits.Text = "23";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -236,15 +218,6 @@
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 26;
             this.label7.Text = "当前BPM:";
-            // 
-            // lblHits2
-            // 
-            this.lblHits2.AutoSize = true;
-            this.lblHits2.Location = new System.Drawing.Point(160, 41);
-            this.lblHits2.Name = "lblHits2";
-            this.lblHits2.Size = new System.Drawing.Size(23, 12);
-            this.lblHits2.TabIndex = 25;
-            this.lblHits2.Text = "183";
             // 
             // label9
             // 
@@ -281,6 +254,33 @@
             this.txtHits.TabIndex = 20;
             this.txtHits.Text = "50";
             this.txtHits.Leave += new System.EventHandler(this.txtHits_Leave);
+            // 
+            // lblLifeHits
+            // 
+            this.lblLifeHits.AutoSize = true;
+            this.lblLifeHits.Location = new System.Drawing.Point(65, 41);
+            this.lblLifeHits.Name = "lblLifeHits";
+            this.lblLifeHits.Size = new System.Drawing.Size(17, 12);
+            this.lblLifeHits.TabIndex = 27;
+            this.lblLifeHits.Text = "23";
+            // 
+            // lblHits2
+            // 
+            this.lblHits2.AutoSize = true;
+            this.lblHits2.Location = new System.Drawing.Point(160, 41);
+            this.lblHits2.Name = "lblHits2";
+            this.lblHits2.Size = new System.Drawing.Size(23, 12);
+            this.lblHits2.TabIndex = 25;
+            this.lblHits2.Text = "183";
+            // 
+            // lblBpm2
+            // 
+            this.lblBpm2.AutoSize = true;
+            this.lblBpm2.Location = new System.Drawing.Point(249, 41);
+            this.lblBpm2.Name = "lblBpm2";
+            this.lblBpm2.Size = new System.Drawing.Size(35, 12);
+            this.lblBpm2.TabIndex = 28;
+            this.lblBpm2.Text = "123.4";
             // 
             // radioButton2
             // 

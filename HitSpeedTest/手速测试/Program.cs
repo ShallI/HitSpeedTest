@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace 手速测试
+namespace HitSpeedTest
 {
     static class Program
     {
