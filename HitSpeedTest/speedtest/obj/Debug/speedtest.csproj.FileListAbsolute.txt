@@ -1,0 +1,8 @@
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\obj\Debug\speedtest.Form1.resources
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\obj\Debug\speedtest.Properties.Resources.resources
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\obj\Debug\speedtest.csproj.GenerateResource.Cache
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\bin\Debug\speedtest.exe
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\bin\Debug\speedtest.pdb
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\obj\Debug\speedtest.exe
+C:\Users\zsharp\Desktop\tst\speedtest\speedtest\obj\Debug\speedtest.pdb
