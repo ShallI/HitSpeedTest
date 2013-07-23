@@ -114,7 +114,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 17;
-            this.label5.Text = "当前BPM:";
+            this.label5.Text = "平均BPM:";
             // 
             // label3
             // 
@@ -217,7 +217,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 26;
-            this.label7.Text = "当前BPM:";
+            this.label7.Text = "平均BPM:";
             // 
             // label9
             // 

@@ -19,6 +19,7 @@ namespace HitSpeedTest
         Bitmap bitmap=new Bitmap(1200,600);//canvas
         Graphics g;
         Point a, b;
+        Point c, d;
         public Form1()
         {
             InitializeComponent();
@@ -80,8 +81,11 @@ namespace HitSpeedTest
                 if (calc.IsRunning)
                 {
                     a = b;
+                    c = d;
                     b = new Point((int)((calc.TargetTime - calc.LeftTime) * bitmap.Width / calc.TargetTime), (bitmap.Height-(int)(bpm*bitmap.Height/picStatus.Height)));
+                    d = new Point((int)((calc.TargetTime - calc.LeftTime) * bitmap.Width / calc.TargetTime),(bitmap.Height-(int)(calc.PartBPM(5)*bitmap.Height/picStatus.Height)));
                     if (a != Point.Empty && b != Point.Empty) g.DrawLine(Pens.Green, a, b);
+                    if (c != Point.Empty && d != Point.Empty) g.DrawLine(Pens.Blue, c, d);
                     picStatus.Refresh();
                 }
             }
@@ -96,8 +100,11 @@ namespace HitSpeedTest
                 if (calc.IsRunning)
                 {
                     a = b;
+                    c = d;
                     b = new Point((int)(calc.Hits * bitmap.Width / calc.TargetHits), bitmap.Height - (int)(bpm * bitmap.Height / picStatus.Height));
+                    d = new Point((int)(calc.Hits * bitmap.Width / calc.TargetHits), (bitmap.Height - (int)(calc.PartBPM(5) * bitmap.Height / picStatus.Height)));
                     if (a != Point.Empty && b != Point.Empty) g.DrawLine(Pens.Green, a, b);
+                    if (c != Point.Empty && d != Point.Empty) g.DrawLine(Pens.Blue, c, d);
                     picStatus.Refresh();
                 }
             }
@@ -109,6 +116,8 @@ namespace HitSpeedTest
             g.Clear(Color.FromArgb(0, 255, 255, 255));//clear canvas
             a = Point.Empty;
             b = Point.Empty;
+            c = Point.Empty;
+            d = Point.Empty;
         }
 
         //for time test
