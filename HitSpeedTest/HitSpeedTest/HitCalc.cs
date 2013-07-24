@@ -195,14 +195,14 @@ namespace HitSpeedTest
             listtime.Clear();
             ready = true;
         }
-        public double PartBPM(int windowSize)
+        public double PartBPM(int windowSize)//2
         {
             if (windowSize < 2) return 0;
-            if (listtime.Count < 1) return 0;
-            if (windowSize > listtime.Count) windowSize = listtime.Count;
+            if (listtime.Count < 2) return 0;
+            if (windowSize+1 > listtime.Count) windowSize = listtime.Count;
             double partbpm = 0;
 
-            partbpm = windowSize * 60.0 / (singlekey ? 2 : 4) / ((DateTime.Now.Ticks+1- listtime[listtime.Count - windowSize])/10000000.0);
+            partbpm = (windowSize-1) * 60.0 / (singlekey ? 2 : 4) / ((listtime[listtime.Count-1]- listtime[listtime.Count - windowSize])/10000000.0);
             return partbpm;
         }
 
