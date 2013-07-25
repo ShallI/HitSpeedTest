@@ -205,6 +205,12 @@ namespace HitSpeedTest
             partbpm = (windowSize-1) * 60.0 / (singlekey ? 2 : 4) / ((listtime[listtime.Count-1]- listtime[listtime.Count - windowSize])/10000000.0);
             return partbpm;
         }
-
+        public double DynBpm()//动态bpm取样
+        {
+            if (BPM < 100) 
+                return PartBPM(10);
+            else
+                return PartBPM((int)(BPM*10/100));
+        }
     }
 }
