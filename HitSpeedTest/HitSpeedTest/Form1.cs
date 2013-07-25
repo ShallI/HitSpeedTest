@@ -159,6 +159,8 @@ namespace HitSpeedTest
             calc.Stop();
             calc.Reset();
             reset();
+            btnReset.Focus();
+            this.Focus();
         }
 
         private void txtLife_TextChanged(object sender, EventArgs e)
