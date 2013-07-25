@@ -1,2 +1,6 @@
-Debug/
-Release/
+obj/
+*.pdb
+*.manifest
+*.vshost.exe
+*.xml
+*.rar
