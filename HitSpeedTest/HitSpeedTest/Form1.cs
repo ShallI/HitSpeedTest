@@ -39,6 +39,8 @@ namespace HitSpeedTest
             loadconfig();
 
             calc.Updated += new EventHandler(calc_Updated);
+            calc.Started += new EventHandler(calc_Started);
+            calc.Stopped += new EventHandler(calc_Stopped);
             radioButton1_Click(null, null);
             g = Graphics.FromImage(bitmap);
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
@@ -46,6 +48,19 @@ namespace HitSpeedTest
             calc.TargetHits = 50;//default test hits
 
             reset();
+        }
+        //输入控制
+        void calc_Stopped(object sender, EventArgs e)
+        {
+            txtLife.Enabled = true;
+            txtHits.Enabled = true;
+        }
+
+        void calc_Started(object sender, EventArgs e)
+        {
+            txtLife.Enabled = false;
+            txtHits.Enabled = false;
+
         }
         void loadconfig()
         {
@@ -144,16 +159,6 @@ namespace HitSpeedTest
             lblB = lblBpm2;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCount_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnReset_Click(object sender, EventArgs e)
         {
             calc.Stop();
@@ -163,10 +168,6 @@ namespace HitSpeedTest
             this.Focus();
         }
 
-        private void txtLife_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         //only accept double
         private void txtLife_Leave(object sender, EventArgs e)
         {
@@ -180,6 +181,7 @@ namespace HitSpeedTest
                 txtLife.Undo();
             }
         }
+
         //only accept int
         private void txtHits_Leave(object sender, EventArgs e)
         {
@@ -194,10 +196,6 @@ namespace HitSpeedTest
             }
         }
 
-        private void picStatus_Click(object sender, EventArgs e)
-        {
-            
-        }
         //picStatus & Form1
         /*warning! 
          * MouseButtons.Left -> Keys.LButton
@@ -253,6 +251,7 @@ namespace HitSpeedTest
                 btnReset_Click(null, null);
             }
             downProc(e.KeyCode);
+            if (calc.IsRunning) e.Handled = true;
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
@@ -327,6 +326,12 @@ namespace HitSpeedTest
         private void picStatus_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(bitmap, new Rectangle(0, 0, picStatus.Width, picStatus.Height));
+        }
+
+        //禁止输入
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (calc.IsRunning) e.Handled = true;
         }
 
 

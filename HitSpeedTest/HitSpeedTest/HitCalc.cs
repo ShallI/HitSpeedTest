@@ -56,6 +56,8 @@ namespace HitSpeedTest
             set { targettime = value; }
         }
         public event EventHandler Updated;
+        public event EventHandler Started;
+        public event EventHandler Stopped;
         //single tap bpm*2
         public double BPM
         {
@@ -175,11 +177,11 @@ namespace HitSpeedTest
         {
             starttime = DateTime.Now.Ticks;
             hits = 0;
-
             timer.Start();
             started = true;
             k1 = k2 = m1 = m2 = false;
             ready = false;
+            if (Started != null) Started(null, null);
         }
         public void Stop()
         {
@@ -188,6 +190,7 @@ namespace HitSpeedTest
             timer.Enabled = false;
             endtime = DateTime.Now.Ticks;
             started = false;
+            if (Stopped != null) Stopped(null, null);
         }
         public void Reset()
         {

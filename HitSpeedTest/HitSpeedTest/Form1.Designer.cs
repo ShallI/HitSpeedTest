@@ -75,7 +75,6 @@
             this.picStatus.Size = new System.Drawing.Size(600, 300);
             this.picStatus.TabIndex = 3;
             this.picStatus.TabStop = false;
-            this.picStatus.Click += new System.EventHandler(this.picStatus_Click);
             this.picStatus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.picStatus.Paint += new System.Windows.Forms.PaintEventHandler(this.picStatus_Paint);
             this.picStatus.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
@@ -105,7 +104,6 @@
             this.groupBox1.Size = new System.Drawing.Size(300, 62);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label5
             // 
@@ -150,7 +148,6 @@
             this.txtLife.Size = new System.Drawing.Size(85, 21);
             this.txtLife.TabIndex = 11;
             this.txtLife.Text = "5";
-            this.txtLife.TextChanged += new System.EventHandler(this.txtLife_TextChanged);
             this.txtLife.Leave += new System.EventHandler(this.txtLife_Leave);
             // 
             // lblLifeTime
@@ -170,7 +167,6 @@
             this.lblHits1.Size = new System.Drawing.Size(23, 12);
             this.lblHits1.TabIndex = 16;
             this.lblHits1.Text = "183";
-            this.lblHits1.Click += new System.EventHandler(this.lblCount_Click);
             // 
             // lblBpm1
             // 
@@ -425,6 +421,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
